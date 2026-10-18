@@ -35,18 +35,6 @@ Open the URL Vite prints (normally `http://localhost:5173`). The frontend works 
 - `unfazed-backend/` — Express API, Mongoose models, auth middleware, centralized entitlement service, payment adapter, notification stub, Socket.IO chat.
 - `unfazed-frontend/` — Vite + React dashboard and public therapist/client views.
 
-## Deploy from GitHub with Render
-
-The root `render.yaml` defines the frontend static site and backend API. To deploy:
-
-1. Create a MongoDB Atlas account and a database. Create a database user and copy the connection URI; replace its password placeholder with the database user's password.
-2. In Atlas Network Access, allow connections from Render. Render's free instances do not have fixed outbound IP addresses, so `0.0.0.0/0` may be required; use a strong, unique database password and never share the URI.
-3. Create a Render account, choose **New > Blueprint**, and connect this GitHub repository's `main` branch.
-4. Enter the Atlas URI when Render prompts for `MONGO_URI`. Render generates `JWT_SECRET`; keep it private. The blueprint connects the frontend and API automatically.
-5. Wait for both services to deploy. Render displays the public frontend URL and API URL in the service dashboards. The API health check is at `/api/health`.
-
-The free API service may sleep when idle, so its first request can take longer. This is an educational demo, not a production medical-records system: do not enter real client or clinical information.
-
 ## Modules implemented
 1. Authentication, therapist profile and branded slug
 2. Weekly availability and booking flow with overlap protection
