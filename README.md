@@ -4,6 +4,9 @@ A MERN-style major project for therapists in India. It includes a responsive Rea
 
 ## Quick start
 
+##Live link : 
+https://fastidious-dolphin-15ad2c.netlify.app/
+
 ### Requirements
 - Node.js 18+
 - MongoDB local instance or MongoDB Atlas connection string
