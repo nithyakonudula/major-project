@@ -1,0 +1,1 @@
+const r=require('express').Router();const c=require('../controllers/noteController');const auth=require('../middleware/authMiddleware');r.get('/shared/:clientId',c.sharedForClient);r.get('/',auth,c.list);r.post('/',auth,c.create);r.patch('/:id',auth,c.update);module.exports=r;

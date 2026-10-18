@@ -1,0 +1,1 @@
+module.exports=function generateSlug(name){return String(name||'therapist').normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')||'therapist';};

@@ -1,0 +1,1 @@
+const r=require('express').Router();const c=require('../controllers/analyticsController');const auth=require('../middleware/authMiddleware');const gate=require('../middleware/entitlementMiddleware');r.get('/',auth,c.overview);r.get('/advanced',auth,gate('features.analyticsAdvanced'),c.overview);module.exports=r;
