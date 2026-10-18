@@ -1,0 +1,2 @@
+const mongoose=require('mongoose');
+module.exports=mongoose.model('ClientPackage',new mongoose.Schema({therapist_id:{type:mongoose.Schema.Types.ObjectId,ref:'Therapist',required:true},client_id:{type:mongoose.Schema.Types.ObjectId,ref:'Client',required:true},package_id:{type:mongoose.Schema.Types.ObjectId,ref:'Package',required:true},sessionsTotal:Number,sessionsUsed:{type:Number,default:0},expiresAt:Date,status:{type:String,enum:['active','expired','completed'],default:'active'}},{timestamps:true}));

@@ -1,0 +1,3 @@
+const mongoose=require('mongoose');
+const SessionNoteSchema=new mongoose.Schema({therapist_id:{type:mongoose.Schema.Types.ObjectId,ref:'Therapist',required:true,index:true},client_id:{type:mongoose.Schema.Types.ObjectId,ref:'Client',required:true},session_id:{type:mongoose.Schema.Types.ObjectId,ref:'Session'},type:{type:String,enum:['private','shared'],default:'private'},format:{type:String,enum:['freeform','SOAP','DAP'],default:'freeform'},title:String,content:{type:String,required:true},createdAt:{type:Date,default:Date.now},updatedAt:{type:Date,default:Date.now}},{timestamps:true});
+module.exports=mongoose.model('SessionNote',SessionNoteSchema);

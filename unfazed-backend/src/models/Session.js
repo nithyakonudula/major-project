@@ -1,0 +1,3 @@
+const mongoose=require('mongoose');
+const SessionSchema=new mongoose.Schema({therapist_id:{type:mongoose.Schema.Types.ObjectId,ref:'Therapist',required:true,index:true},client_id:{type:mongoose.Schema.Types.ObjectId,ref:'Client',required:true},startsAt:{type:Date,required:true},endsAt:{type:Date,required:true},duration:{type:Number,default:50},status:{type:String,enum:['booked','completed','cancelled','no-show'],default:'booked'},mode:{type:String,enum:['online','in-person'],default:'online'},meetingLink:String,price:{type:Number,default:1200},timezone:{type:String,default:'Asia/Kolkata'}},{timestamps:true});
+SessionSchema.index({therapist_id:1,startsAt:1,endsAt:1}); module.exports=mongoose.model('Session',SessionSchema);

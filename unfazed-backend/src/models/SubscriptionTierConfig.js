@@ -1,0 +1,2 @@
+const mongoose=require('mongoose');
+module.exports=mongoose.model('SubscriptionTierConfig',new mongoose.Schema({name:{type:String,unique:true,required:true},monthlyPrice:{type:Number,default:0},caps:{activeClients:{type:Number,default:20}},features:{analyticsAdvanced:{type:Boolean,default:false},soapNotes:{type:Boolean,default:false},packages:{type:Boolean,default:false},chat:{type:Boolean,default:true}},active:{type:Boolean,default:true}},{timestamps:true}));

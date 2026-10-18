@@ -1,0 +1,1 @@
+const r=require('express').Router();const c=require('../controllers/paymentController');const auth=require('../middleware/authMiddleware');r.post('/webhook',c.webhook);r.get('/',auth,c.list);r.post('/order',auth,c.createOrder);r.post('/verify',auth,c.verify);r.get('/:id/invoice',auth,c.invoice);module.exports=r;

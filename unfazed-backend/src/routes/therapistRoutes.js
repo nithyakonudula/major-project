@@ -1,0 +1,1 @@
+const r=require('express').Router();const c=require('../controllers/therapistController');const auth=require('../middleware/authMiddleware');r.get('/public/:slug',c.publicProfile);r.get('/profile',auth,c.getProfile);r.patch('/profile',auth,c.updateProfile);module.exports=r;
